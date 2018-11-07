@@ -59,6 +59,6 @@ bpSchema.methods.serialize = function(){
 }
 
 const Author = mongoose.model("Author", authorSchema);
-const blogPost = mongoose.model("blogPost",bpSchema);
+const BlogPost = mongoose.model("BlogPost",bpSchema);
 
-module.exports = {Author, blogPost};
+module.exports = {Author, BlogPost};
