@@ -3,6 +3,19 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+const authorSchema = mongoose.Schema({
+    firstName: "string",
+    lastName: "string",
+    userName: {
+        type: "string",
+        unique: true
+    }
+});
+
+const commentSchema = mongoose.Schema({
+    content: "string"
+});
+
 const bpSchema = mongoose.Schema({
     author: {
         firstName: String,
@@ -21,6 +34,16 @@ const bpSchema = mongoose.Schema({
     }
 });
 
+bpSchema.pre("find", function(next){
+    this.populate("author");
+    next();
+});
+
+bpSchema.pre("findOne", function(next){
+    this.populate("author");
+    next();
+});
+
 bpSchema.virtual("authorName").get(function(){
     return `${this.author.firstName} ${this.author.lastName}`.trim();
 });
@@ -35,6 +58,7 @@ bpSchema.methods.serialize = function(){
     }
 }
 
+const Author = mongoose.model("Author", authorSchema);
 const blogPost = mongoose.model("blogPost",bpSchema);
 
-module.exports = blogPost;
+module.exports = {Author, blogPost};
