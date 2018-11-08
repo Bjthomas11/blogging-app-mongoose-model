@@ -4,7 +4,7 @@
   "description": "blogging-app-mongoose",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "author": "Brian Thomas",
   "license": "ISC",
