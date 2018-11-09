@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy: rocky-basin-54474:
+  provider: heroku
+  api_key:
+    secure: YKw1AiXscyU3GPSSqBocmP+oPDm3O+NmUupjNjLCk5ozNkshT24YSLU04l3z2P5BpcXE5+HuwQrFxFfi3bn2kIvb0pxDMej378/qQMxc8WUBasAkW40WbCU7YILyXEdmbtz7/ww6DlSHNY8EFZUuVZjP4vZaXBW+t3UhjwsyznmixBpOK+06wCzX1Oq8d8Rf6Gfqfbuiw7FBwI1jnZxRvZhkTWQK7b29v0GvgWE5WHoz8hFevpO0GN5qcDfk7lasBR/lIw41UO0H9PhFmZB0I2JbXj75ZXc8HEgUz+gb65bXXrZsQSZZQB5WmXOF2AD8BtKd10rR9PoGoL3faf8Kfd590BOURs+g9ejoEIGJTRU0QSKr30DdQ6TrzDCD18zW6+GyyFCS/1pbaJ1f0CoZEByaTJZWdUbe7BJV4U0b+CMHHTa1T9pSGQtc/YJj95Ia9Vq3O/j5UibaMCl83dT1ZBczb6iijnD+X48Mjw5UE6FqayzG2cgAywBZfixmmzaIs1gfuKX3EHB6tI1Nh22TnxGBwTNiLGLy/LPqEAGFLWXlCQGOLbbTgyEN5RkZbpyMdpLbFEm+VrgPHhfiuzs82wa7G1GEB8SJcT2z3ux5XZSOy1el8B3ZhIuK5nxMYdEAa3QQfdDWPpl3PJqRsZTNnxmF/VMvw/Uvim9We5Q+mVI=
+  app: rocky-basin-54474
+  on:
+    repo: Bjthomas11/blogging-app-mongoose-model
